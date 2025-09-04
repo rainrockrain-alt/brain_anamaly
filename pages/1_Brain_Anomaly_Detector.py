@@ -166,7 +166,7 @@ def preprocess_image(image_bytes):
 # --- LLM Integration ---
 
 def get_ai_explanation(query):
-    apiKey = st.secrets["API_KEY"]
+    apiKey = st.secrets["GEMINI_API_KEY"]
     apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={apiKey}"
  # Payload for the AI API
     payload = {
@@ -292,4 +292,5 @@ def home_page():
 
 if st.session_state.page == "home":
     home_page()
+
 
