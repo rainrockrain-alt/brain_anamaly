@@ -57,7 +57,7 @@ st.markdown("""
 
 # --- LLM Integration ---
 def get_ai_explanation(query):
-    apiKey = st.secrets["API_KEY"]
+    apiKey = st.secrets["GEMINI_API_KEY"]
     apiUrl = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={apiKey}"
  # Payload for the AI API
     payload = {
@@ -136,3 +136,4 @@ if prompt:
 # Display the explanation if it exists in the session state
 if "explanation" in st.session_state and st.session_state.explanation:
     st.markdown(st.session_state.explanation)
+
